@@ -1,4 +1,4 @@
-const sequelize = require('../models/'); 
+const sequelize = require('../models'); 
 const Products = sequelize.import('../models/product');
 const User = sequelize.model('user');
 
@@ -8,9 +8,9 @@ class ProductService {
         return Products.findAll()
     }
 
-    createProduct(productObj){
-        console.log(productObj)
-        return Products.create(productObj)
+    createProduct(productobj){
+        console.log(productobj)
+        return Products.create(productobj)
     }
 
     getMyProduct(userId){
@@ -20,6 +20,10 @@ class ProductService {
     getProduct(id){
         return Product.find({where: {id}})
     }
-}
+
+    updateProduct(productDetailsToUpdate) {
+        return Product.update(productDetailsToUpdate,{where:{id: productDetailsToUpdate.id}})
+        }
+    }    
 
 module.exports = ProductService;
