@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const Product = require('../models').sequelize.model('product');
 const ProductService = require('../service/product.service')
+const validateSession = require('../middleware/validate-session')
 
 router.get('/', (req, res) => {
     // returns all products

@@ -1,6 +1,5 @@
-const sequelize = require('../models'); 
+const sequelize = require('../models').sequelize; 
 const Products = sequelize.import('../models/product');
-const User = sequelize.model('user');
 
 class ProductService {
 
