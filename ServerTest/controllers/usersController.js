@@ -2,6 +2,7 @@ const router = require('express').Router();
 const User = require('../models').sequelize.model('user');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+// User.sync({force:true});
 
 router.post('/login', async (req, res) => {
     try {

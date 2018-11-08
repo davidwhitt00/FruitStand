@@ -1,0 +1,17 @@
+.fruitPic{
+    /* background-attachment: fixed; */
+    /* height: auto;  */
+    /* width:1999px;
+    top: -160px; */
+    object-fit: none;
+    object-position: 50% 50%;
+}
+
+.mainFruits {
+    background: url('assets/img/fruitMain.jpg') 50% 70% no-repeat;
+    background-size: cover;
+}
+
+#cards{
+    width: 100%;
+}

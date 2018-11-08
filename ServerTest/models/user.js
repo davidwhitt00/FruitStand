@@ -4,6 +4,7 @@ module.exports = (sequelize,Datatypes) =>{
         first_name: Datatypes.STRING,
         last_name: Datatypes.STRING,
         email: Datatypes.STRING,
+        password: Datatypes.STRING
     })
     return User
 }

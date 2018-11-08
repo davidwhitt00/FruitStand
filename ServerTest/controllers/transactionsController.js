@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Transaction = require('../models').sequelize.model('transaction')
+// Transaction.sync({force:true});
 
 router.get('/', (req, res) => {
     // returns all transactions

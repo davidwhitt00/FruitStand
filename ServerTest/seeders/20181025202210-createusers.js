@@ -1,5 +1,6 @@
 'use strict';
-const chance = require('chance')()
+const chance = require('chance')();
+const bcyrpt = require('bcryptjs');
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -11,6 +12,7 @@ module.exports = {
         first_name: chance.first({ gender: "female" }),
         last_name: chance.last(),
         email: chance.email(),
+        password: bcyrpt.hash("test", 10),
         createdAt: new Date(Date.now()),
         updatedAt: new Date(Date.now())
       };

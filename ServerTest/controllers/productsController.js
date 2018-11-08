@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const Product = require('../models').sequelize.model('product');
+const validateSession = require('../middleware/validate-session');
+// Product.sync({force:true});
 
 router.get('/', (req, res) => {
     // returns all products
@@ -14,7 +16,7 @@ router.get('/:id', async (req, res) => {
         res.status(500).json({ err: true, msg: 'Product not found' });
 })
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', validateSession, async (req, res) => {
     const deletedValue = Product.destroy({ where: { id: req.params.id } });
     return deletedValue ? res.status(200).json({err: false, msg:`Product ${req.params.id} was deleted` }) :
         res.status(500).json({ err: true, msg: 'Product was not deleted' });

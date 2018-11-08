@@ -1,0 +1,17 @@
+<div>
+  <mat-grid-list cols="1" rowHeight = "3:1" >
+    <mat-grid-tile class="mainFruits" ></mat-grid-tile>
+  </mat-grid-list>
+    <div>
+      <mat-grid-list gutterSize="50px" rowHeight ="1:1" cols="3">
+        <mat-grid-tile *ngFor = "let product of products">
+          <mat-card>
+            <img mat-card-lg-image src="assets/img/prodFruits.jpg" alt="Oranges">
+            <mat-card-title> {{product.product_name}} </mat-card-title>
+            <mat-card-subtitle>{{product.product_description}}</mat-card-subtitle>
+            <mat-card-subtitle>{{product.product_price}}</mat-card-subtitle>
+          </mat-card>
+        </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>
